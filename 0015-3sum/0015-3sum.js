@@ -6,7 +6,7 @@ var threeSum = function (nums) {
   const result = []
   nums.sort((a, b) => a - b)
 
-  for (let target = 0; target < nums.length; target++) {
+  for (let target = 0; target < nums.length-2; target++) {
     const currentTarget = nums[target]
     let left = target + 1
     let right = nums.length - 1
