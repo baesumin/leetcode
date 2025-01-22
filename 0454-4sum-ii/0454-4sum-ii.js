@@ -7,7 +7,6 @@
  */
 var fourSumCount = function (nums1, nums2, nums3, nums4) {
   let map = new Map()
-  let cnt = 0
 
   for (let num1 of nums1) {
     for (let num2 of nums2) {
@@ -15,12 +14,12 @@ var fourSumCount = function (nums1, nums2, nums3, nums4) {
     }
   }
 
+  let cnt = 0
   for (let num3 of nums3) {
     for (let num4 of nums4) {
-      if (map.has(-num3 - num4)) cnt += map.get(-num3 - num4)
+      cnt += map.get(-num3 - num4) || 0
     }
   }
 
   return cnt
 };
-
