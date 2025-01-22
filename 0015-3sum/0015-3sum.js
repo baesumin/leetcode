@@ -4,7 +4,7 @@
  */
 var threeSum = function (nums) {
   nums.sort((a, b) => a - b)
-  console.log(nums)
+
   let result = []
   for (let target = 0; target < nums.length; target++) {
     let left = target + 1
