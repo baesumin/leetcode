@@ -10,16 +10,16 @@ var longestSubstring = function (s, k) {
 const longestSubstringUtil = (s, start, end, k) => {
   if (end - start < k) return 0
 
-  const countMap = Array(26).fill(0)
+  let map = new Map()
   for (let i = start; i < end; i++) {
-    countMap[s.charCodeAt(i) - 97]++
+    map.set(s[i], (map.get(s[i]) || 0) + 1);
   }
 
   for (let mid = start; mid < end; mid++) {
-    if (countMap[s.charCodeAt(mid) - 97] >= k) continue
+    if (map.get(s[mid]) >= k) continue
 
     let midNext = mid + 1
-    while (midNext < end && countMap[s.charCodeAt(midNext) - 97] < k) midNext++
+    while (midNext < end && map.get(midNext) < k) midNext++
 
     return Math.max(longestSubstringUtil(s, start, mid, k), longestSubstringUtil(s, midNext, end, k))
   }
