@@ -19,7 +19,7 @@ const longestSubstringUtil = (s, start, end, k) => {
     if (countMap[s.charCodeAt(mid) - 97] >= k) continue
 
     let midNext = mid + 1
-    // while (midNext < end && countMap[s[midNext] - 'a'] < k) midNext++
+    while (midNext < end && countMap[s.charCodeAt(midNext) - 97] < k) midNext++
 
     return Math.max(longestSubstringUtil(s, start, mid, k), longestSubstringUtil(s, midNext, end, k))
   }
