@@ -6,7 +6,7 @@
 var wordBreak = function (s, wordDict) {
   let set = new Set(wordDict)
   let seen = new Set()
-  let q = [[0, '']]
+  let q = [[0]]
 
   while (q.length) {
     let [pos] = q.shift()
