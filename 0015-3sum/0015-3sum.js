@@ -28,7 +28,7 @@ var threeSum = function (nums) {
       }
     }
 
-    while (target < nums.length - 1 && nums[target] === nums[target + 1]) target++
+    // while (target < nums.length - 1 && nums[target] === nums[target + 1]) target++
   }
   return result
 };
