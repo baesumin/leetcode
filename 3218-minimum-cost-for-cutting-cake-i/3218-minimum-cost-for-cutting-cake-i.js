@@ -18,7 +18,7 @@ var minimumCost = function (m, n, horizontalCut, verticalCut) {
     const canCutVertical = vIdx < verticalCut.length
     const canCutHorizontal = hIdx < horizontalCut.length
 
-    if (canCutVertical && (!canCutHorizontal || verticalCut[vIdx] > horizontalCut[hIdx])) {
+    if (canCutVertical && ( verticalCut[vIdx] > horizontalCut[hIdx])) {
       totalCost += horizontalPieces * verticalCut[vIdx]
       vIdx++
       verticalPieces++
