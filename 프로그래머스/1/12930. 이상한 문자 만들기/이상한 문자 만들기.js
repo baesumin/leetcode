@@ -9,7 +9,5 @@ function solution(s) {
         cnt++
     }
     
-    console.log(answer)
-    
     return answer;
 }
